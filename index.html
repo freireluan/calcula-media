@@ -15,6 +15,7 @@
     <header class="cabecalho">
         <h1 class="titulo-principal">Calcule aqui a média das suas notas</h1>
     </header>
+   
     <main>
         <div class="conteudo-geral">
             <div class="tabelas-resultados">
@@ -116,7 +117,19 @@
                
                 <form  class="formulario">
                     <h3 id="titleform">Prencha com suas notas</h3>
-                    <p>As notas que você não tiver acesso complete com um 0 (zero) para o calcúlo das médias de trimestres serem efetuado corretamente </p>
+                    <h4 class="titulosTriemstreCalcular">Quantos trimestres você deseja calcular :</h4>
+                    <div class="trimestreACalcular">
+                        <div class="wed">
+                            <label for="1°" class="label">n° de Trimestres</label>
+                            <input type="tel" id="trimes"class="input trimestres" name="numeroDeTrimestre" >
+                            <button id="tridivisor">Confirmar</button>
+                        </div>
+                    </div>
+
+                   
+                   
+                 
+                    <!-- <p>As notas que você não tiver acesso complete com um 0 (zero) para o calcúlo das médias de trimestres serem efetuado corretamente </p> -->
                     <div id="flexform">
                         <div class="sda">
                             <h5>Arte</h5>
@@ -351,5 +364,6 @@
     <script src="./portugues.js"></script>
     <script src="./quimica.js"></script>
     <script src="./sociologia.js"></script>
+    <script src="./trimestresACalcular.js"></script>
 </body>
 </html>

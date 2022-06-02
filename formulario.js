@@ -28,20 +28,32 @@ var somaingles = formresults.querySelector(".somain");
 var mediaingles = formresults.querySelector(".mediain");
 
 function calculaMédiaM(np, ns , nt){
-   var mediaatt = (np+ns+nt)/3;
-  
-  //  console.log(mediaatt);
+   let mediaatt;
+   if(divisor == 1){
+      mediaatt = np;
+   }
+   if(divisor == 2){
+      mediaatt = (np + ns)/divisor;
+   }
+   if(divisor == 3){
+      mediaatt = (np + ns + nt)/divisor;
+   }
    return mediaatt.toFixed(2);
   
 };
 function calculasoma(np, ns, nt){
-  
+  let calculasoma;
+  if(divisor == 1){
+     calculasoma = np;
+  }
+  if(divisor == 2){
+   calculasoma = np + ns;
+  }
+ if(divisor == 3){
+   calculasoma = np + ns + nt;
+  }
 
-   var calculasoma =  np + ns + nt;
-//   if (np == 0 || ns == 0 || nt == 0){
-//      console.log("Bem loco !");
-//   }
-  //  console.log(calculasoma);
+   
    return calculasoma;
  
 }

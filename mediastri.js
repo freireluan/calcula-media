@@ -1,24 +1,35 @@
 var form = document.querySelector(".formulario");
-media1 = 0;
-media2 = 0;
-media3 = 0;
+var media1 = 0;
+var media2 = 0;
+var media3 = 0;
 var media1tri = document.querySelector(".cla1tri");
 var media2tri = document.querySelector(".cla2tri");
 var media3tri = document.querySelector(".cla3tri");
 var mediageral = document.querySelector(".mediadatotal");
+let mediaGeral;
 
 // console.log(media2tri,media1tri,media3tri,mediageral);
 
 var botao = form.querySelector(".botao");
 botao.addEventListener("click",function(event){
     event.preventDefault();
-
-     calculaptri(form);
-     calculastri(form);
-     calcuttri(form);
-
-
+     if(divisor == 1 ){
+        calculaptri(form);
+        console.log("1");
+     }
+     if(divisor == 2 ){
+        calculaptri(form);
+        calculastri(form);
+        console.log("2");
+     }
+     if(divisor == 3 ){
+        calculaptri(form);
+        calculastri(form);
+        calcuttri(form);
+        console.log("3");
+     }
      calculageral();
+     console.log(divisor);
 
 
 })
@@ -92,7 +103,7 @@ function calculaptri(form){
      var ingles1 = parseInt(ingles11);  
      
      
-     var media1 = (ingles1 + Sociologia1 + portugues1 + matematica1 + Biologia1 +
+     media1 = (ingles1 + Sociologia1 + portugues1 + matematica1 + Biologia1 +
      artes1 + EFisica1 + Efinanceira1 + geografia1 + Filosofia1 + fisica1 + quimica1 + historia1)/13;
      media1tri.textContent = media1.toFixed(2);
      return media1;                                     
@@ -141,7 +152,7 @@ function calculaptri(form){
     var ingles2 = parseInt(ingles22);  
     
 
-    var media2 = (ingles2 + Sociologia2 + portugues2 + matematica2 + Biologia2 +
+        media2 = (ingles2 + Sociologia2 + portugues2 + matematica2 + Biologia2 +
         artes2 + EFisica2 + Efinanceira2 + geografia2 + Filosofia2 + fisica2 + quimica2 + historia2)/13;
         media2tri.textContent = media2.toFixed(2);
         return media2;
@@ -188,7 +199,7 @@ function calculaptri(form){
     var ingles33 = form.inglesterceiro.value;
     var ingles3 = parseInt(ingles33);   
     
-    var media3 = (ingles3 + Sociologia3 + portugues3 + matematica3 + Biologia3 +
+        media3 = (ingles3 + Sociologia3 + portugues3 + matematica3 + Biologia3 +
         artes3 + EFisica3 + Efinanceira3 + geografia3 + Filosofia3 + fisica3 + quimica3 + historia3)/13;
         media3tri.textContent = media3.toFixed(2); 
         return media3;
@@ -196,9 +207,15 @@ function calculaptri(form){
  }
 
  function calculageral(){
-      media3 = calcuttri(form);
-      media2 = calculastri(form);
-      media1 = calculaptri(form);
-      var mediaGeral = (media3+media1+media2)/3;
+      
+      if(divisor == 1){
+          mediaGeral = media1;
+      }
+      if(divisor == 2){
+         mediaGeral= (media1 + media2) / divisor;
+      }
+      if(divisor == 3){
+          mediaGeral = (media1 + media2 + media3) / divisor;
+      }
       mediageral.textContent = mediaGeral.toFixed(2);
  }
